@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approval of Draft Tender</title>
+    <style>
+        body{
+            background-color: #eef2f1;
+        }
+    
+
+        h1{
+            background-color: #00C9A7;
+            position: relative;
+            text-align: center;
+            box-shadow: 2px 2px 8px black;
+        }
+        
+        table {
+          border-collapse: collapse;
+          width:80%;
+        }
+    
+        table, th, td {
+          word-spacing: 10px;
+          border: 1px solid;
+        } 
+        .col1{
+          size: 10px;
+        }
+    
+        th, td {
+          text-align: left;
+          height: 20px;
+          padding: 8px;
+          /* text-align: left; */
+          border-bottom: 1px solid #ddd;
+        }
+    
+        
+        main{
+           /* background-color: #FBEAFF ; */
+            text-align: center;
+        }
+        
+        label{
+            font-weight: bold;
+            font-size: large;
+            display: block;
+            margin-top: 35px;
+        }
+        
+        textarea{
+            text-align: center;
+            background-color: #FBEAFF;
+        }
+
+        input,select{
+            background-color: #FBEAFF;
+            font-size: large;
+            margin-top: 3px;
+            
+            width: 30%;
+            text-align:center;
+            padding: 3px;
+            box-sizing: border-box;
+            /* display: flexbox; */
+        }
+
+ 
+
+
+    
+        button {
+           
+        appearance: none;
+        background-color: #4D8076;
+        border: 2px solid #1A1A1A;
+        border-radius: 15px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        font-size: 16px;
+        font-weight: 600;
+        line-height: normal;
+        margin: 10px;
+        min-height: 60px;
+        min-width: 0;
+        outline: none;
+        padding: 16px 24px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 9%;
+        will-change: transform;
+    }
+
+       button:disabled {
+       pointer-events: none;
+    }
+
+      button:hover {
+       box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+      transform: translateY(-2px);
+    }
+
+      button:active {
+       box-shadow: none;
+       transform: translateY(0);
+    }
+      </style>
+</head>
+<body>
+  <h1>Approval of Draft Tender</h1>
+  <main>
+
+  <form id="tenderForm">
+
+    <label for="prNo">PR No & Date:</label>
+    <input type="number" id="prNo" name="prNo"  placeholder="--enter a value--">
+ 
+    <!-- <label for="tendertype">Type of Tender:</label>
+    <input type="text" id="tendertype" name="tendertype"> -->
+
+    <label for="department">Indenting Department:</label>
+    <select id="department" style="font-size: medium;text-align: center; ">
+      <option value="Select">--Select--</option>
+      <option value="Planning">Planning</option>
+      <option value="Design">Design</option>
+    </select>
+
+    <label for="Tenderno">Tender No & date :</label>
+    <input type="text" id="Tenderno" name="Tenderno"  placeholder="--enter a text--">
+
+    <label for="Estimate">Estimation Range :</label>
+    <select id="Estimate" style="font-size: medium;text-align: center; ">
+      <option value="Select">--Select--</option>
+      <option value="0 to 5">0 to 5 Lakhs</option>
+      <option value="5 to 10">5 to 10 Lakhs</option>
+      <option value="10 to 50">10 to 50 Lakhs</option>
+      <option value="50 to 100">50 to 100 Lakhs</option>
+      <option value="100 to 200">100 to 200 Lakhs</option>
+      <option value="200 to 500">200 to 500 Lakhs</option>
+      <option value="500 to 1000">500 to 1000 Lakhs</option>
+      <option value="1000 to 1500">1000 to 1500 Lakhs</option>
+      <option value="1500 to 3000">1500 to 3000 Lakhs</option>
+      <option value="3000 to 10000">3000 to 10000 Lakhs</option>
+      <option value="10000 to 30000">10000 to 30000 Lakhs</option>
+      <option value="30000 Above">30000 Above</option>
+      
+    </select>
+
+    <!-- <b><label for="avg-pr">Average PR value (in Lakh):</label></b>
+    <input type="number" id="avg-pr" placeholder="--enter a value--"> -->
+
+    <label for="Matgroup">Material Group :</label>
+    <input type="text" id="Matgroup" name="Matgroup"  placeholder="--enter a text--">
+
+    <b><label for="LD"> LD Clause:</label></b>
+    <select id="LD" style="font-size: medium;text-align: center; ">
+      <option value="Select">--Select--</option>
+      <option value="text">For delay attributable to supplier, supplier shall pay, <br>a sum representing  0.5% per week or part thereof, subject to maximum 10% of the delayed portion of the order.</option>
+    </select>
+
+    <label for="Prospectivebid">Prospective Bidders :</label>
+    <input type="text" id="Prospectivebid" name="Prospectivebid"  placeholder="--enter a text--">
+    
+
+    <label for="Tendernominated">Tender Nominated/OEM:</label>
+    <select id="Tendernominated" style="font-size: medium;text-align: center; ">
+      <option value="Select">--Select--</option>
+      <option value="applicable">Applicable</option>
+      <option value="notApplicable">Not Applicable</option>
+    </select>
+     
+
+    <form id="tenderfee">
+    <label for="Tenderfee">Tender Fee:</label>
+    <select id="Tenderfee" style="font-size: medium;text-align: center; ">
+      <option value="Select">--Select--</option>
+      <option value="applicable">Applicable</option>
+      <option value="notApplicable">Not Applicable</option>
+    </select>
+    <div id="Fees" style="display: none; margin-top: 9px;">
+      <label for="Fees">Fees (in Rs):</label>
+      <input type="number" id="Fees" placeholder="--enter a value--"  name="fees" min="0" max="100" >
+    </div>
+    </form>
+    
+
+
+  <b><label for="evaluation-type"> Evaluation Type:</label></b>
+  <select id="evaluation-type" style="font-size: medium;text-align: center; ">
+    <option value="Select">--Select--</option>
+    <option value="itemwise">Itemwise Evaluation</option>
+    <option value="overall">Overall Evaluation</option>
+  </select>
+     
+  <b><label for="tender-type"> Tender Type:</label></b>
+  <select id="tender-type">
+    <option value="Select">--Select--</option>
+    <option value="open">Open Tender</option>
+    <option value="emergency">Emergency Tender</option>
+    <option value="limit">Limit Tender</option>
+  </select>
+
+  
+  <b><label for="TDD"> Tender Due Date:</label></label></b>
+  <input type="number" id="avg-pr" placeholder="--enter a value--">
+
+  <label for="YardNo">Yard Number :</label>
+  <input type="text" id="Matgroup" name="Matgroup"  placeholder="--enter a Number--">
+
+  <form id="MSEform">
+    <b><label for="MSE" style="font-size: large;"> Exclusive reserved for:</label></b>
+    <select id="MSE" name="Exclusive reserved for " style="font-size: medium; text-align: center;">
+      <option value="Select">--Select--</option>
+      <option value="MSE">MSE</option>
+      <option value="Class I">Class I</option>
+      <option value="Start Up">Start Up</option>
+      <option value="Not Applicable">Not Applicable</option>
+    </select>
+  </form>
+ 
+
+  <form id="Purchase preference">
+    <b><label for="PP" style="font-size: large;"> Nature of Item:</label></b>
+    <select id="preference" name="preference" style="font-size: medium; text-align: center;" >
+      <option value="Select">--Select--</option>
+      <option value="Divisible">Divisible</option>
+      <option value="Non Divisible">Non Divisible</option>
+      <option value="Not Applicable">Not Applicable </option>
+    </select>
+  </form>
+
+  <b><label for="evaluation-type"> Security Deposit:</label></b>
+  <select id="evaluation-type" style="font-size: medium;text-align: center; ">
+    <option value="Select">--Select--</option>
+    <option value="itemwise">Applicable</option>
+    <option value="overall">Not Applicable</option>
+  </select>
+
+
+  <br>
+  <div class="form-group">
+    <b><label for="deliveryMonths"> Delivery in Months:</label></b>
+    <input type="number" id="deliveryMonths" placeholder="--enter a value--">
+  </div>
+  <br>
+
+  <form id="warrantyForm">
+    <b><label for="warrantyStatus" style="font-size: large;"> Warranty Status:</label></b>
+    <select id="warrantyStatus" name="warrantyStatus" style="font-size: medium; text-align: center;">
+      <option value="Select">--Select--</option>
+      <option value="applicable">Applicable</option>
+      <option value="notApplicable">Not Applicable</option>
+    </select>
+  <div id="monthsTab" style="display: none; margin-top: 15px;">
+    <label for="noOfMonths">Number of Months:</label>
+    <input type="number" id="noOfMonths" placeholder="--enter a value--"  name="noOfMonths" min="0" max="100" >
+  </div>
+  <div id="pbgTab" style="display: none; margin-top: 15px;">
+    <label for="pbgPercentage">PBG Percentage:</label>
+    <input type="number" id="pbgPercentage" placeholder="--enter a value--"  name="pbgPercentage" min="0" max="100" step="0.01">
+  </div>  
+  </form>
+
+  <form id="InspectionTeam">
+    <b><label for="Inspection" style="font-size: large;"> Inspection:</label></b>
+    <select id="Inspection" name="Inspection" style="font-size: medium; text-align: center;">
+      <option value="Select">--Select--</option>
+      <option value="TPI">TPI</option>
+      <option value="MDL">MDL</option>
+      <option value="CQAE">CQAE</option>
+      <option value="OTHER">OTHER</option>
+      
+    </select>
+  </form>
+
+  <label for="Dileveryterms">Dilevery Terms:</label>
+  <input type="text" id="Dileveryterms" name="Dileveryterms"  placeholder="--enter a text--">
+
+  <label for="Paymentterms">Payment Terms:</label>
+  <input type="text" id="Paymentterms" name="Paymentterms"  placeholder="--enter a text--">
+
+  
+
+
+  <p>&nbsp;</p>
+
+    <label for="cfaAttention">CFA Attention:</label>
+    <textarea id="cfaAttention" rows="10" cols="60" placeholder="--Enter Remarks--"></textarea>
+    <br>
+
+    <!-- <button class="button-27" role="button" onclick="submitForm()">Submit </button> -->
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form>
+</main>
+<!-- <hr> <b>Subject :Approval to float tender for procurement  </b> -->
+  <table id="resultTable" style="display: none;">
+    <tr>
+      <th id="col1"style="width:50%">Field</th>
+      <th id="col2" style="width: 50%;">Value</th>
+    </tr> 
+  </table>
+  <script>
+    document.getElementById('Tenderfee').addEventListener('change', function() {
+       var fee = document.getElementById('Fees');
+       var Tenderfee = document.getElementById('Tenderfee').value;
+       if (Tenderfee === 'applicable') {
+         fee.style.display = 'block';   
+       } else {
+         Fee.style.display = 'none'     
+       }
+     });
+  </script>
+
+
+  <script>
+    document.getElementById('warrantyStatus').addEventListener('change', function() {
+       var monthsTab = document.getElementById('monthsTab');
+       var pbgTab = document.getElementById('pbgTab');
+       var warrantyStatus = document.getElementById('warrantyStatus').value;
+ 
+       if (warrantyStatus === 'applicable') {
+         monthsTab.style.display = 'block';
+         pbgTab.style.display = 'block';
+       } else {
+         monthsTab.style.display = 'none';
+         pbgTab.style.display = 'none';
+       }
+   
+     });
+  </script>
+
+  <script>
+    function submitForm() {
+      var prNo = document.getElementById("prNo").value;
+    //   var tendertype = document.getElementById ("tendertype").value;
+      var avgprvalue= document.getElementById("Estimate").value;
+      var department = document.getElementById ("department").value;
+      var Tenderno=document.getElementById ("Tenderno").value;
+      var Estimate=document.getElementById ("Estimate").value;
+      var Matgroup=document.getElementById ("Matgroup").value;
+      var Prospectivebid=document.getElementById ("Prospectivebid").value;
+      var evaluationType = document.getElementById("evaluation-type").value;
+      var tenderType = document.getElementById("tender-type").value;
+      var deliveryMonths = parseFloat(document.getElementById("deliveryMonths").value);
+      var cfaAttention = document.getElementById("cfaAttention").value;
+      
+
+      if(Estimate==="0 to 5"){
+        var avgPRValue = 2.5
+      }
+       else if(Estimate==="5 to 10"){
+        var avgPRValue = 7.5
+      }
+       else if(Estimate ==="10 to 20"){
+        var avgPRValue  = 12.5
+
+       }
+       else if(Estimate === "200 to 500"){
+        var avgPRValue = 350
+       }
+       else if(Estimate === "500 to 1000"){
+        var avgPRValue = 750
+       }
+       else if(Estimate === "1000 to 1500"){
+        var avgPRValu = 1250
+       }
+       else if(Estimate === "1500 to 3000"){
+        var avgPRValu = 2250
+       }
+       else if(Estimate === "3000 to 10000"){
+        var avgPRValu = 6500
+       }
+       else if(Estimate === "10000 to 30000"){
+        var avgPRValu = 20000
+       }
+       else if(Estimate === "30000 Above"){
+        var avgPRValu = 15000
+       }
+
+
+     
+
+
+
+      var table = document.getElementById("resultTable");
+      var row = table.insertRow  (-1);
+      var fieldCell = row.insertCell(0);
+      var valueCell = row.insertCell(1);
+      
+      
+
+      fieldCell.innerHTML = "PR No & Date";
+      valueCell.innerHTML = prNo;
+
+      row = table.insertRow(-1);
+      fieldCell = row.insertCell(0);
+      valueCell = row.insertCell(1);
+
+    //   fieldCell.innerHTML = "Type of Tender";
+    //   valueCell.innerHTML = tendertype;
+
+    //   row = table.insertRow(-1);
+    //   fieldCell = row.insertCell(0);
+    //   valueCell = row.insertCell(1);
+
+      fieldCell.innerHTML = "Indenting Department";
+      valueCell.innerHTML = department;
+
+      row = table.insertRow(-1);
+      fieldCell = row.insertCell(0);
+      valueCell = row.insertCell(1);
+
+      fieldCell.innerHTML = "Tender No & date";
+      valueCell.innerHTML = Tenderno;
+
+      row = table.insertRow(-1);
+      fieldCell = row.insertCell(0);
+      valueCell = row.insertCell(1);
+
+      fieldCell.innerHTML = "Estimation Range";
+      valueCell.innerHTML = Estimate;
+
+      row = table.insertRow(-1);
+      fieldCell = row.insertCell(0);
+      valueCell = row.insertCell(1);
+
+      fieldCell.innerHTML = "Material Group";
+      valueCell.innerHTML = Matgroup;
+
+      row = table.insertRow(-1);
+      fieldCell = row.insertCell(0);
+      valueCell = row.insertCell(1);
+
+      fieldCell.innerHTML = "Prospective Bidders";
+      valueCell.innerHTML = Prospectivebid;
+
+      row = table.insertRow(-1);
+      fieldCell = row.insertCell(0);
+      valueCell = row.insertCell(1);
+      
+
+      fieldCell.innerHTML = "Evaluation Type";
+      valueCell.innerHTML = evaluationType;
+
+      row = table.insertRow(-1);
+      fieldCell = row.insertCell(0);
+      valueCell = row.insertCell(1);
+
+
+      fieldCell.innerHTML = "tender-type";
+      valueCell.innerHTML = tenderType;
+
+      row = table.insertRow(-1);
+      fieldCell = row.insertCell(0);
+      valueCell = row.insertCell(1);
+
+// EMD
+      if (tenderType === "open") {
+        if (evaluationType === "itemwise" && avgPRValue >=10){
+          var emd = "Rs" + (0.012 * avgPRValue).toFixed(2) + " Lakhs of EMD will be Applicable";
+          if ( emd>10){
+          var emd = 10;
+          }}
+          else if (evaluationType === "itemwise" && avgPRValue <10){
+            var emd = "Rs" + (0.012 * avgPRValue).toFixed(2) + " Lakhs of EMD will be Applicable";
+            if ( emd>10){
+            var emd = 10;
+         }}
+         else if (evaluationType === "overall" && avgPRValue >=10) {
+          var emd = "Rs"  +(0.02 * avgPRValue).toFixed(2) + " Lakhs of EMD will be Applicable";
+          if ( emd>10){
+          var emd = 10;
+          }}
+          else if ( evaluationType === "overall" && avgPRValue < 10){
+            var emd = "Rs"  +(0.012 * avgPRValue).toFixed(2) + " Lakhs of EMD will be Applicable";
+            if ( emd>10){
+            var emd = 10;
+
+          }}
+      }
+        else if (tenderType === "emergency" || tenderType === "limit"){
+          var emd = "Emd not applicable"
+        }
+
+      fieldCell.innerHTML = "EMD(in lakhs)";
+      valueCell.innerHTML = emd;
+      row = table.insertRow(-1);
+      fieldCell = row.insertCell(0);
+      valueCell = row.insertCell(1);
+     
+      // Pre qualification
+
+      if (evaluationType === "itemwise") {
+        var poCopyValue = (0.3 * avgPRValue) / (deliveryMonths/12);
+        var avgTurnoverValue = (0.3 * avgPRValue).toFixed(2);
+
+        // resultText += "<p>&nbsp;</p><li><b> Pre Qualification Criteria :- <br></b>i)In last three years Bidder should execute the PO copy along with Proof of execution (Tax Invoice/Inspection note/Work completion certificate) of value Rs : <b><i><u>" + poCopyValue + " Lakhs</u></i></b> <br>";
+        
+        // resultText += "ii)Bidder's average turnover in the last 3 financial years will be Rs:<b><u> " + avgTurnoverValue + " Lakhs</u></b>";
+      
+      } else if (evaluationType === "overall") {
+        var poCopyValue = (0.5 * avgPRValue)/(deliveryMonths/12);
+        var avgTurnoverValue = (0.3 * avgPRValue).toFixed(1);
+
+        // resultText += "<p>&nbsp;</p><li><b> Pre Qualification Criteria :- <br></b> i)In last three years Bidder should execute the PO copy along with Proof of execution (Tax Invoice/Inspection note/Work      completion certificate) of value Rs :<b><i><u>" + poCopyValue + " Lakhs</u></i></b>";
+
+        // resultText += "<p>&nbsp;</p>ii)Bidder's average turnover in the last 3 financial years will be Rs:<b><u> " + avgTurnoverValue + "Lakhs</u></b>"+ "";
+      }
+
+
+
+      fieldCell.innerHTML = "Avg Turnover value";
+      valueCell.innerHTML = avgTurnoverValue;
+      row = table.insertRow(-1);
+      fieldCell = row.insertCell(0);
+      valueCell = row.insertCell(1);
+
+      fieldCell.innerHTML = "Avg PO Value";
+      valueCell.innerHTML = poCopyValue;
+      row = table.insertRow(-1);
+      fieldCell = row.insertCell(0);
+      valueCell = row.insertCell(1);
+
+
+      fieldCell.innerHTML = "CFA Attention";
+      valueCell.innerHTML = cfaAttention;
+
+    //   document.getElementById("result").innerHTML = resultText;
+
+      document.getElementById("tenderForm").innerHTML = resultTable;
+      table.style.display = "table";
+    }
+  </script>
+        <div>
+        <button class="button-18" id="print" onclick="printData()" style="margin-left: 45.5%;">Print</button><br><br>
+       </div>
+  <script>
+   function printData(){
+   var divToPrint=document.getElementById("resultTable");
+   newWin= window.open("");
+   newWin.document.write(divToPrint.outerHTML);
+   newWin.print();
+   newWin.close();
+}
+  </script>
+
+ <!-- <script>
+  function printTable()
+  {
+      var nRows=document.getElementById("row");
+      var feildcell=document.getElementById("fieldCell");
+      var valuecell=document.getElementById("valueCell");
+
+      spaceofDiv.innerHTML=("<table border=1>");
+      for(i=0; i<nRows.value; i++)
+      {
+          spaceofDiv.innerHTML=("<tr>");
+          for(j=0; j<nColumns.value; j++)
+          {    
+              spaceofDiv.innerHTML=("<td width=50 height=50>&nbsp;");
+          }
+      }
+      spaceofDiv.innerHTML=("</table>");     
+
+  }
+</script> -->
+       
+
+     
+</body>
+</html>
